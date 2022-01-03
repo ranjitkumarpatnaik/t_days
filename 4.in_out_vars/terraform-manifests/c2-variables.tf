@@ -15,6 +15,29 @@ variable "instance_type" {
   
 }
 
+# AWS EC2 Instance Type List
+
+variable "instance_type_list" {
+  description = "EC2 instance type"
+  type = list(string)
+  default = ["t2.micro","t2.small","t2.large"]
+}
+
+# AWS EC2 Instance Type map
+
+variable "instance_type_map" {
+  description = "EC2 instance type"
+  type = map(string)
+  default = {
+    "dev" = "t2.micro"
+    "qa" = "t2.small"
+    "prod" = "t2.large"
+
+  }
+}
+
+
+
 #AWS Ec2 instance key pair
 
 variable "instance_keypair" {
@@ -23,6 +46,14 @@ variable "instance_keypair" {
     default = "DevopsProject"
   
 }
+
+
+
+
+
+
+
+
 
 
 
